@@ -1,14 +1,10 @@
-interface Dictionary {
-  [key: string]: any
-}
-
 export default extend
 
-export function extend<B extends Dictionary, E extends Dictionary>(
-  base: B,
+export function extend<O extends Dictionary, E extends Dictionary>(
+  object: O,
   extension: E
-): B & E {
-  return <B & E>new Proxy(base, {
+) {
+  return <O & E>new Proxy(object, {
     get(target, prop, receiver) {
       if (prop in extension) {
         return extension[<string>prop]
@@ -17,4 +13,8 @@ export function extend<B extends Dictionary, E extends Dictionary>(
       return Reflect.get(target, prop, receiver)
     },
   })
+}
+
+interface Dictionary {
+  [key: string]: any
 }
