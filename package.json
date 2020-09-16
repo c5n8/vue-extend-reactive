@@ -1,0 +1,35 @@
+{
+  "name": "vue-extend-reactive",
+  "version": "1.0.0",
+  "description": "Vue helper to extend reactive object",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/c5n8/vue-extend-reactive"
+  },
+  "homepage": "https://github.com/c5n8/vue-extend-reactive",
+  "license": "MIT",
+  "keywords": [
+    "vue",
+    "extend",
+    "reactive",
+    "object",
+    "helper",
+    "proxy",
+    "composition"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist/*"
+  ],
+  "author": "",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "typescript": "^4.0.2"
+  }
+}
