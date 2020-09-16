@@ -1,6 +1,6 @@
 {
   "name": "vue-extend-reactive",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Vue helper to extend reactive object",
   "repository": {
     "type": "git",
@@ -27,8 +27,7 @@
     "dist/*"
   ],
   "author": "",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "typescript": "^4.0.2"
   }
