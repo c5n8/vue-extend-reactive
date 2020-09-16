@@ -181,7 +181,7 @@ const coolTemperature = 22
 
 export function useHotFood(args) {  
   const temperatureInCelcius = ref(args.temperatureInCelcius)
-  const isHot = computed(() => temperatureInCelcius > coolTemperature
+  const isHot = computed(() => temperatureInCelcius.value > coolTemperature
 
   function blow() {
     temperatureInCelcius.value -= 10
@@ -200,7 +200,7 @@ export function useHotFood(args) {
 Ref value have to be accessed through its value property. 
 Ref may be unwrapped in template,
 but it causes syntax inconsistency,
-between template and script.
+between template and script block.
 
 ```js
 // Using ref for each prop of state
@@ -257,7 +257,7 @@ hotFood.isHot
 hotFood.blow()
 ```
 
-There is a caveat that returned reactive object cannot be destructured as it will lost reactivity,
+There is one caveat that returned reactive object cannot be destructured as it will lost reactivity,
 but that is a sacrifice I am willing to make, to get terser and more consistent syntax.
 
 ## License
