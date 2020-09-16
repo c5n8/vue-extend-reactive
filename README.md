@@ -54,7 +54,7 @@ yarn add vue-extend-reactive
       <button v-if="hotFood.isHot" @click="hotFood.blow()">
         Blow
       </button>
-      <button v-else-if="hotFood.isCool" @click="hotFood.start()">
+      <button v-else-if="hotFood.isCool" @click="hotFood.heatup()">
         Again
       </button>
     </div>
@@ -87,7 +87,7 @@ export function useHotFood({ temperatureInCelcius }) {
     isCool: computed(() => state.isHot === false ),
   })
 
-  function start() {
+  function heatup() {
     state.temperatureInCelcius = temperatureInCelcius
     coolingIntervalId = setInterval(
       () => state.temperatureInCelcius -= 1,
@@ -111,11 +111,11 @@ export function useHotFood({ temperatureInCelcius }) {
   )
 
   onMounted(() => {
-    start()
+    heatup()
   })
 
   return extend(state, {
-    start,
+    heatup,
     blow,
   })
 }
