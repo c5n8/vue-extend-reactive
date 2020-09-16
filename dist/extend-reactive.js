@@ -7,5 +7,15 @@ export function extend(object, extension) {
             }
             return Reflect.get(target, prop, receiver);
         },
+        set(target, prop, value) {
+            if (prop in extension) {
+                ;
+                extension[prop] = value;
+                return true;
+            }
+            ;
+            target[prop] = value;
+            return true;
+        },
     });
 }
