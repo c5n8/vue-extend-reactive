@@ -12,6 +12,18 @@ export function extend<O extends Dictionary, E extends Dictionary>(
 
       return Reflect.get(target, prop, receiver)
     },
+
+    set(target, prop, value) {
+      if (prop in extension) {
+        ;(<{ [key: string]: any }>extension)[<string>prop] = value
+
+        return true
+      }
+
+      ;(<{ [key: string]: any }>target)[<string>prop] = value
+
+      return true
+    },
   })
 }
 
