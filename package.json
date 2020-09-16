@@ -1,19 +1,21 @@
 {
   "name": "vue-extend-reactive",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Vue helper to extend reactive object",
   "repository": {
     "type": "git",
     "url": "https://github.com/c5n8/vue-extend-reactive"
   },
-  "homepage": "https://github.com/c5n8/vue-extend-reactive#readme",
+  "homepage": "https://github.com/c5n8/vue-extend-reactive",
   "license": "MIT",
   "keywords": [
     "vue",
     "extend",
     "reactive",
     "object",
-    "helper"
+    "helper",
+    "proxy",
+    "composition"
   ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
