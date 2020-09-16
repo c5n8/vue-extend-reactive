@@ -1,6 +1,6 @@
 export default extend;
-export function extend(base, extension) {
-    return new Proxy(base, {
+export function extend(object, extension) {
+    return new Proxy(object, {
         get(target, prop, receiver) {
             if (prop in extension) {
                 return extension[prop];
