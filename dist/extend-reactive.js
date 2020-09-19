@@ -1,20 +1,21 @@
 export default extend;
 export function extend(object, extension) {
     return new Proxy(object, {
-        get(target, prop, receiver) {
+        get(...args) {
+            const [, prop] = args;
             if (prop in extension) {
                 return extension[prop];
             }
-            return Reflect.get(target, prop, receiver);
+            return Reflect.get(...args);
         },
-        set(target, prop, value) {
+        set(...args) {
+            const [, prop, value] = args;
             if (prop in extension) {
                 ;
                 extension[prop] = value;
                 return true;
             }
-            ;
-            target[prop] = value;
+            Reflect.set(...args);
             return true;
         },
     });
