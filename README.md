@@ -6,16 +6,15 @@
   Vue helper to extend reactive object.
 </p>
 
+## Notice
+
+This helper is compatible with both Vue 2 (using `@vue/composition-api`) and Vue 3.
+
 ## Intro
-
-This helper is compatible with both Vue 2 (using `@vue/composition-api`) and Vue 3
-as it is just simple function to extend reactive object using proxy object.
-
-A recommended use case is to extend reactive object returned from composition function
+Extend reactive object returned from composition function
 with additional reactive object(such as getters), or additional methods to get these benefits:
-
-- Simplify returned object api of composition function.
-- Eliminate overhead thinking of whether to use `value` property of `ref` object to get its value.
+- Simplify api of object returned by a composition function.
+- Eliminate overhead thinking of whether to use or not to use `value` property of `ref` object to get its value.
 
 ## Table of Contents
 1. [Installation](#Installation)
