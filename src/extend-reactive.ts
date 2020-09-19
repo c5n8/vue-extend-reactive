@@ -5,22 +5,25 @@ export function extend<O extends Dictionary, E extends Dictionary>(
   extension: E
 ) {
   return <O & E>new Proxy(object, {
-    get(target, prop, receiver) {
+    get(...args) {
+      const [, prop] = args
+
       if (prop in extension) {
         return extension[<string>prop]
       }
 
-      return Reflect.get(target, prop, receiver)
+      return Reflect.get(...args)
     },
 
-    set(target, prop, value) {
+    set(...args) {
+      const [, prop, value] = args
       if (prop in extension) {
-        ;(<{ [key: string]: any }>extension)[<string>prop] = value
+        ;(<Dictionary>extension)[<string>prop] = value
 
         return true
       }
 
-      ;(<{ [key: string]: any }>target)[<string>prop] = value
+      Reflect.set(...args)
 
       return true
     },
