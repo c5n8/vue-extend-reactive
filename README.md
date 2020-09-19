@@ -127,7 +127,7 @@ export function useHotFood({ temperatureInCelcius }) {
 ```ts
 export default extend
 
-export declare function extend<B extends Dictionary, E extends Dictionary>(base: B, extension: E): B & E
+export declare function extend<O extends Dictionary, E extends Dictionary>(object: O, extension: E): O & E
 
 interface Dictionary {
   [key: string]: any
@@ -214,6 +214,8 @@ temperatureInCelcius.value
 isHot.value
 blow()
 ```
+
+### Enter vue-extend-reactive
 
 To achieve terser syntax, reactive object needs to be extended,
 maybe with another reactive object (like getters), or methods.
